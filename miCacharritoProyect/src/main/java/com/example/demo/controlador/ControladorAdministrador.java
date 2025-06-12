@@ -39,9 +39,9 @@ public class ControladorAdministrador {
 		
 	    if (repositorio.existsById(n)) {
 	    	repositorio.deleteById(n);
-	        return "Administrador fijo eliminado exitosamente";
+	        return "Administrador eliminado exitosamente";
 	    } else {
-	            return "Administrador fijo no encontrado";
+	            return "Administrador no encontrado";
 	    }
 	 }
 	
