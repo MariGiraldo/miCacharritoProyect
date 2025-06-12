@@ -64,4 +64,16 @@ public class ControladorVehiculo {
 
 	        }	            
 	}
+	
+	@GetMapping("/BuscarVehiculoColor")
+	public List<Vehiculo> BuscarVehiculoColor(@RequestParam String color){
+		List<Vehiculo> vehiculoColor = repositorio.findByColor(color);
+		
+		if(vehiculoColor!= null) {
+			return vehiculoColor;
+		}
+		else {
+			return null;
+		}
+	}
 }
