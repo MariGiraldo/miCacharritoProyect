@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -62,5 +63,20 @@ public class ControladorAdministrador {
 
 	        }	            
 	}
+	
+	@PostMapping("/login")
+    public String login(
+            @RequestParam String email,
+            @RequestParam String contraseña) {
+        
+        Administrador admin = repositorio.findByEmail(email)
+                                    .orElse(null);
+        
+        if (admin != null && admin.getContraseña().equals(contraseña)) {
+            return "Bienvenido Admin";
+        } else {
+            return "La contraseña es incorrecta";
+        }
+    }
 
 }
