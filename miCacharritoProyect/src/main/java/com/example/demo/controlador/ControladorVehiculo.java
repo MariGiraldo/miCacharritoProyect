@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.modelo.TipoVehiculo;
 import com.example.demo.modelo.Vehiculo;
 import com.example.demo.repositorio.RepoVehiculo;
 
@@ -63,5 +64,45 @@ public class ControladorVehiculo {
 	            return null;
 
 	        }	            
+	}
+	
+	@GetMapping("/BuscarVehiculoColor")
+	public List<Vehiculo> BuscarVehiculoColor(@RequestParam String color){
+		List<Vehiculo> vehiculoColor = repositorio.findByColor(color);
+		
+		if(vehiculoColor!= null) {
+			return vehiculoColor;
+		}
+		else {
+			return null;
+		}
+	}
+	
+	@GetMapping("/BuscarPorTipo")
+	public List<Vehiculo> BuscarPorTipo(@RequestParam TipoVehiculo tipo){
+		
+		List<Vehiculo> listTipos = repositorio.findByTipo_vehiculo(tipo);
+		
+		if(listTipos != null) {
+			
+			return listTipos;
+		}
+		else {
+			return null;
+		}
+	}
+	
+	@GetMapping("/BuscarPorEstado")
+	public List<Vehiculo> BuscarPorEstado(@RequestParam String estado){
+		
+		List<Vehiculo> listEstados = repositorio.findByEstado(estado);
+		
+		if(listEstados != null) {
+			
+			return listEstados;
+		}
+		else {
+			return null;
+		}
 	}
 }

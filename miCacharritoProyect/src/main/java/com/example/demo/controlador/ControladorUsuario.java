@@ -25,7 +25,7 @@ public class ControladorUsuario {
 	public List<Usuario> verUsuarios(){
 		return repositorio.findAll();
 	}
-	@PostMapping("/GuardarAlquilerUsuario")
+	@PostMapping("/GuardarUsuario")
 	public List<Usuario> GuardarUsuario(@RequestBody Usuario e){
 		
 		this.repositorio.save(e);
@@ -63,5 +63,19 @@ public class ControladorUsuario {
 	            return null;
 
 	        }	            
+	}
+	
+	@GetMapping("/InicioSeccionU")
+	public String IncioUsuario(@RequestParam Long id,String contraseña) {
+		
+		Usuario vali = repositorio.findById(id).orElse(null);
+		
+		if(vali != null && vali.getContraseña().equals(contraseña)){
+			
+			return "Bienvenido "+vali.getNombre();
+		}
+		else {
+			return "Usuario o contraseña no validos";
+		}
 	}
 }
