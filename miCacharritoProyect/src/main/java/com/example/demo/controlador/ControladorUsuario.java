@@ -25,7 +25,7 @@ public class ControladorUsuario {
 	public List<Usuario> verUsuarios(){
 		return repositorio.findAll();
 	}
-	@PostMapping("/GuardarAlquilerUsuario")
+	@PostMapping("/RegistroUsuario")
 	public List<Usuario> GuardarUsuario(@RequestBody Usuario e){
 		
 		this.repositorio.save(e);
