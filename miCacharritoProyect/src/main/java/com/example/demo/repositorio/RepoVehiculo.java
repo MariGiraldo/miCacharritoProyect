@@ -13,8 +13,8 @@ public interface RepoVehiculo extends JpaRepository<Vehiculo, Long>{
 	
 		public List<Vehiculo> findByColor(String color);
 		
-		public List<Vehiculo> findByTipo_vehiculo(TipoVehiculo tipo);
-		
+		public List<Vehiculo> findByTipoVehiculo(TipoVehiculo tipo);
+		 
 		public List<Vehiculo> findByEstado(String estado);
 
 }

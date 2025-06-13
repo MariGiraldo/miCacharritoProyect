@@ -81,7 +81,7 @@ public class ControladorVehiculo {
 	@GetMapping("/BuscarPorTipo")
 	public List<Vehiculo> BuscarPorTipo(@RequestParam TipoVehiculo tipo){
 		
-		List<Vehiculo> listTipos = repositorio.findByTipo_vehiculo(tipo);
+		List<Vehiculo> listTipos = repositorio.findByTipoVehiculo(tipo);
 		
 		if(listTipos != null) {
 			

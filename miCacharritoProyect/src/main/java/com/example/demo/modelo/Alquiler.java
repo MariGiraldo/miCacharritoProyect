@@ -28,7 +28,7 @@ public class Alquiler {
 	
 	@ManyToOne()
 	@JoinColumn(name = "Id_vehiculo", referencedColumnName="Id_vehiculo")
-	private Vehiculo vehiculo;
+	private Vehiculo vehiculos;
 	
 	@Column(name = "Fecha_de_Inicio", nullable = false)
 	@Temporal(TemporalType.DATE) 
@@ -68,11 +68,11 @@ public class Alquiler {
 	}
 
 	public Vehiculo getVehiculo() {
-		return vehiculo;
+		return vehiculos;
 	}
 
 	public void setVehiculo(Vehiculo vehiculo) {
-		this.vehiculo = vehiculo;
+		this.vehiculos = vehiculo;
 	}
 
 	public Date getFecha_inicio() {
@@ -123,12 +123,12 @@ public class Alquiler {
 		this.fecha_dev_real = fecha_dev_real;
 	}
 
-	public Alquiler(Long id_alquiler, Usuario usuario, Vehiculo vehiculo, Date fecha_inicio, Date fecha_fin,
+	public Alquiler(Long id_alquiler, Usuario usuario, Vehiculo vehiculos, Date fecha_inicio, Date fecha_fin,
 			BigDecimal valor_alquiler, String estado, BigDecimal cargo_retraso, Date fecha_dev_real) {
 		super();
 		this.id_alquiler = id_alquiler;
 		this.usuario = usuario;
-		this.vehiculo = vehiculo;
+		this.vehiculos = vehiculos;
 		this.fecha_inicio = fecha_inicio;
 		this.fecha_fin = fecha_fin;
 		this.valor_alquiler = valor_alquiler;

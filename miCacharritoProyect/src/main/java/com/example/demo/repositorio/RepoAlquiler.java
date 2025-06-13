@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.modelo.Alquiler;
+import com.example.demo.modelo.Vehiculo;
 
  
 @Repository
@@ -15,5 +16,7 @@ public interface RepoAlquiler extends JpaRepository<Alquiler, Long>{
 	
 	public boolean existsByEstado(String estado);
 	
+	public List<Alquiler> findByVehiculos(Vehiculo placa);
+ 	
 	
 }

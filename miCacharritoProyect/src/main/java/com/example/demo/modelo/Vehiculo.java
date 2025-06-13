@@ -27,7 +27,7 @@ public class Vehiculo {
 	
 	@ManyToOne()
 	@JoinColumn(name = "Id_tipo", referencedColumnName="Id_tipo")
-	private TipoVehiculo tipo_vehiculo;
+	private TipoVehiculo tipoVehiculo;
 	
 	@Column(name = "Color_del_Vehiculo", length = 80, nullable = false)
 	private String color;
@@ -63,11 +63,11 @@ public class Vehiculo {
 	}
 
 	public TipoVehiculo getTipo_vehiculo() {
-		return tipo_vehiculo;
+		return tipoVehiculo;
 	}
 
 	public void setTipo_vehiculo(TipoVehiculo tipo_vehiculo) {
-		this.tipo_vehiculo = tipo_vehiculo;
+		this.tipoVehiculo = tipo_vehiculo;
 	}
 
 	public String getColor() {
@@ -94,13 +94,13 @@ public class Vehiculo {
 		this.estado = estado;
 	}
 
-	public Vehiculo(Long id_vehiculo, String placa, String modelo, TipoVehiculo tipo_vehiculo, String color,
+	public Vehiculo(Long id_vehiculo, String placa, String modelo, TipoVehiculo tipoVehiculo, String color,
 			BigDecimal valor_alquiler, String estado) {
 		super();
 		this.id_vehiculo = id_vehiculo;
 		this.placa = placa;
 		this.modelo = modelo;
-		this.tipo_vehiculo = tipo_vehiculo;
+		this.tipoVehiculo = tipoVehiculo;
 		this.color = color;
 		this.valor_alquiler = valor_alquiler;
 		this.estado = estado;

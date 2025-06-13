@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.modelo.Alquiler;
+import com.example.demo.modelo.Vehiculo;
 import com.example.demo.repositorio.RepoAlquiler;
 
 @RestController
@@ -64,7 +65,7 @@ public class ControladorAlquiler {
 	@GetMapping("/ActualizarAlquiler")
 	public Alquiler ActualizarAlquiler(@RequestParam Long id, Date fi, Date ff, BigDecimal va, String estado, BigDecimal cr, Date fdr ){
 		
-	        Optional<Alquiler> AlquilerOpt = repositorio.findById(id);
+	        Optional<Alquiler> AlquilerOpt = this.repositorio.findById(id);
 
 	        if (AlquilerOpt.isPresent()) {
 	        	Alquiler Alquiler = AlquilerOpt.get();
@@ -75,11 +76,24 @@ public class ControladorAlquiler {
 	        	Alquiler.setCargo_retraso(cr);
 	        	Alquiler.setFecha_dev_real(fdr);
 	        	
-	            return repositorio.save(Alquiler);
+	            return this.repositorio.save(Alquiler);
 	        } else {
 	            return null;
 
 	        }	            
+	}
+	
+	@GetMapping("/BuscarPorPlaca")
+	public List<Alquiler> BuscarPorPlaca(@RequestParam Vehiculo placa){
+		
+		List<Alquiler> listPlacas = this.repositorio.findByVehiculos(placa);
+		
+		if(listPlacas != null) {
+			return listPlacas;
+		}
+		else {
+			return null;
+		}
 	}
 	
 }
