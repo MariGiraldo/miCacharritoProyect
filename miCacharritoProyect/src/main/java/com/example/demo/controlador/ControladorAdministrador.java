@@ -4,17 +4,22 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.modelo.Administrador;
+import com.example.demo.modelo.LoginDto;
 import com.example.demo.repositorio.RepoAdministrador;
 
 @RestController
 @RequestMapping("/ver/c1/")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ControladorAdministrador {
 	
 	@Autowired
@@ -56,7 +61,7 @@ public class ControladorAdministrador {
 	        	admin.setNombre(n);
 	        	admin.setApellidos(a);
 	        	admin.setEmail(e);
-	        	admin.setContraseña(c);
+	        	admin.setPassword(c);
 	            return repositorio.save(admin);
 	        } else {
 	            return null;
@@ -65,18 +70,16 @@ public class ControladorAdministrador {
 	}
 	
 	@PostMapping("/login")
-    public String login(
-            @RequestParam String email,
-            @RequestParam String contraseña) {
-        
-        Administrador admin = repositorio.findByEmail(email)
-                                    .orElse(null);
-        
-        if (admin != null && admin.getContraseña().equals(contraseña)) {
-            return "Bienvenido Admin";
-        } else {
-            return "La contraseña es incorrecta";
-        }
-    }
+	public ResponseEntity<Boolean> login(@RequestBody LoginDto request) {
+	    String email = request.getEmail();
+	    String contraseña = request.getPassword();
 
+	    Administrador admin = repositorio.findByEmail(email).orElse(null);
+
+	    if (admin != null && admin.getPassword().equals(contraseña)) {
+	        return ResponseEntity.ok(true); // Login válido
+	    } else {
+	        return ResponseEntity.ok(false); // Login inválido
+	    }
+	}
 }

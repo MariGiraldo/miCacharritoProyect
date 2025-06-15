@@ -23,7 +23,7 @@ public class Administrador {
 	private String email;
 	
 	@Column(name="Contraseña", length = 25, nullable = false)
-	private String contraseña;
+	private String password;
 
 	public Long getId_admin() {
 		return id_admin;
@@ -57,24 +57,26 @@ public class Administrador {
 		this.email = email;
 	}
 
-	public String getContraseña() {
-		return contraseña;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public Administrador(Long id_admin, String nombre, String apellidos, String email, String contraseña) {
+	public Administrador(Long id_admin, String nombre, String apellidos, String email, String password) {
 		super();
 		this.id_admin = id_admin;
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.email = email;
-		this.contraseña = contraseña;
+		this.password = password;
 	}
 
 	public Administrador() {
 		super();
-	}	
+	}
+
+
 }
