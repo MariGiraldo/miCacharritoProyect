@@ -1,0 +1,93 @@
+.holi {
+  background-color: #000000; /* Fondo oscuro general */
+}
+
+/* Tarjetas (cards) */
+.card {
+  background-color: #000000; /* Fondo oscuro para tarjetas */
+  border: 1px solid #8b0000; /* Borde rojo oscuro */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.1);
+}
+
+/* Encabezados de tarjetas con color personalizado */
+.card-header {
+  background-color: #8b0000; /* Rojo oscuro */
+  color: #ffffff;
+}
+
+/* Tabla */
+.table {
+  background-color: #5f5e5e;
+  color: #ffffff;
+}
+
+.table thead {
+  background-color: #f05050;
+  color: #ff4f4f;
+}
+
+.table tbody tr:hover {
+  background-color: #c2c0c0;
+}
+
+.badge.bg-danger {
+  background-color: #e50914;
+}
+
+/* Inputs y botones */
+.form-control {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  border: 1px solid #e50914;
+  border-radius: 5px;
+}
+
+.form-control::placeholder {
+  color: #dad4d4;
+}
+
+.btn-success {
+  background-color: #e50914;
+  border: none;
+  color: #ffffff;
+}
+
+.btn-success:hover {
+  background-color: #ff00009d;
+}
+
+.btn-dark {
+  background-color: #e50914;
+  border: 1px solid #e50914;
+  color: white;
+}
+
+.btn-dark:hover {
+  background-color: #ff00009d;
+}
+
+/* Encabezado principal */
+h2.text-center {
+  color: #ff4f4f;
+}
+
+
+
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #ff313173;
+}

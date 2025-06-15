@@ -1,31 +1,30 @@
-/* Estilo para la barra de navegación */
+/* Barra de navegación */
 .nav {
-    background-color: #000000; /* Fondo lila claro */
+    background-color: #000000;
     padding: 10px 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    box-shadow: 0 4px 8px rgba(214, 18, 18, 0.925);
 }
 
-/* Estilo para los enlaces de navegación */
+/* Enlaces */
 .nav-link {
-    color: #e61a1ab2; /* Color de texto lila */
+    color: #e61a1ab2;
     margin-right: 15px;
     font-weight: bold;
     text-decoration: none;
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #cf2121fd; /* Lila más oscuro al pasar el ratón */
+    color: #cf2121fd;
 }
 
-/* Estilo para el enlace activo */
 .nav-link.active {
-    color: #cf2121fd; /* Color para el enlace activo */
-    border-bottom: 2px solid #ffffff; /* Línea debajo del enlace activo */
+    color: #cf2121fd;
+    border-bottom: 2px solid #ffffff;
 }
 
-/* Estilo para el formulario de búsqueda */
+/* Formulario de búsqueda */
 .d-flex {
     display: flex;
     align-items: center;
@@ -34,25 +33,30 @@
 .form-control {
     border-radius: 20px;
     padding: 10px;
-    border: 2px solid #8b2222; /* Bordes lila */
+    border: 2px solid #8b2222;
     margin-right: 10px;
 }
 
 .form-control:focus {
-    border-color: #ad2323; /* Color del borde al hacer foco */
-    box-shadow: 0 0 5px #ce6f6c; /* Sombra suave en el foco */
+    border-color: #ad2323;
+    box-shadow: 0 0 5px #ce6f6c;
 }
 
-/* Estilo para el botón de búsqueda */
+/* Botón */
 .btn-outline-success {
-    color: #ee0e0e; /* Texto lila */
-    border-color: hsl(0, 88%, 55%); /* Borde lila */
+    color: #ee0e0e;
+    border-color: hsl(0, 88%, 55%);
     border-radius: 20px;
     padding: 8px 15px;
 }
 
 .btn-outline-success:hover {
-    background-color: #fd7e7e; /* Fondo lila claro en hover */
-    color: white; /* Texto blanco */
-    border-color: #c71111; /* Borde lila */
+    background-color: #fd7e7e;
+    border-color: #c71111;
+}
+.dropdown-menu {
+  position: absolute;
+  color: white;
+  background-color: rgb(0, 0, 0);
+  z-index: 9999;
 }
