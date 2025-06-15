@@ -1,0 +1,29 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/assets/img/login.jpg');
+
+}
+.login-card {
+  background: #000000;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.795);
+  width: 100%;
+  color: rgb(153, 23, 23);
+  max-width: 400px;
+}
+
+.btn-login {
+  background: rgb(153, 23, 23);
+  color: white;
+  border: none;
+  transition: background 0.3s;
+  font-weight: bold;
+}
+
+.btn-login:hover {
+  background: #5a1c1c;
+}
